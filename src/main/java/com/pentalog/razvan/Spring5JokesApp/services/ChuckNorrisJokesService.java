@@ -1,6 +1,7 @@
 package com.pentalog.razvan.Spring5JokesApp.services;
 
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -9,8 +10,9 @@ import org.springframework.stereotype.Service;
 public class ChuckNorrisJokesService implements JokesService {
     private final ChuckNorrisQuotes chuckNorricJokes;
 
-    public ChuckNorrisJokesService() {
-        chuckNorricJokes = new ChuckNorrisQuotes();
+    @Autowired
+    public ChuckNorrisJokesService(ChuckNorrisQuotes chuckNorricJokes) {
+        this.chuckNorricJokes = chuckNorricJokes;
     }
 
     @Override
