@@ -32,7 +32,7 @@ public class ChuckNorricJokesController {
         return "chuck-jokes";
     }
 
-    @RequestMapping("/")
+    @RequestMapping({"/", ""})
     public String getChuckJokes(Model model) {
         model.addAttribute("joke", jokesService.tellJoke());
         return "chucknorris";
