@@ -33,4 +33,9 @@ public class NormalJokesController {
         model.addAttribute("jokesList", jokesList);
         return "normal-jokes";
     }
+    
+    public Integer printNumber(Integer elem) {
+    	System.out.println("elem is : " + elem);
+    	return elem*2;
+    }
 }
